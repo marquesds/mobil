@@ -1,0 +1,127 @@
+body {
+	background-color: #E9EAED;
+}
+
+.logo {
+	width: 21px;
+	height: 23px;
+	margin-top: -5px;
+}
+
+.jumbotron {
+	height: 300px !important; padding-top : 30px !important;
+	background-image: url('../img/city.jpg');
+	background-size: cover;
+	padding-top: 30px !important;
+}
+
+.img-imovel {
+	width: 310px;
+	height: 180px;
+}
+
+.portfolio-item {
+	margin-bottom: 20px;
+}
+
+.navbar-custom {
+	padding-right: 5px !important;
+	padding-left: 5px !important;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+	position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+	position: absolute;
+	padding: 10px;
+	pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon {
+	left: 0px;
+}
+
+.right-addon .glyphicon {
+	right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+	padding-left: 30px;
+}
+
+.right-addon input {
+	padding-right: 30px;
+}
+
+.input-search {
+	width: 300%;
+}
+
+.form-control {
+	width: 100% !important;
+}
+
+@media ( max-width : 1280px) {
+	.input-search {
+		width: 200%;
+	}
+}
+
+@media ( max-width : 1150px) {
+	.input-search {
+		width: 150%;
+	}
+}
+
+@media ( max-width : 1020px) {
+	.input-search {
+		width: 100%;
+	}
+}
+
+@media ( max-width : 830px) {
+	.navbar-custom {
+		padding-right: 0px !important;
+		padding-left: 0px !important;
+	}
+}
+
+/* Image Overlay */
+.contenthover {
+	padding: 20px 20px 10px 20px;
+}
+
+.contenthover, .contenthover h3, contenthover a {
+	color: #fff;
+}
+
+.contenthover, .contenthover h4, contenthover a {
+	color: #fff;
+}
+
+.contenthover h3, .contenthover p {
+	margin: 0 0 10px 0;
+	line-height: 1.4em;
+	padding: 0;
+}
+
+.contenthover a.mybutton {
+	display: block;
+	float: left;
+	padding: 5px 10px;
+	background: #3c9632;
+	color: #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.contenthover a.mybutton:hover {
+	background: #34742d
+}
