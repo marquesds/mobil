@@ -15,13 +15,12 @@ body {
 	padding-top: 30px !important;
 }
 
-.img-imovel {
-	width: 310px;
-	height: 180px;
-}
-
 .portfolio-item {
 	margin-bottom: 20px;
+}
+
+.img-responsive {
+	width: 100% !important;
 }
 
 .navbar-custom {
