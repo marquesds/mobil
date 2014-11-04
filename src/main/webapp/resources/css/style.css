@@ -9,10 +9,10 @@ body {
 }
 
 .jumbotron {
-	height: 300px !important; padding-top : 30px !important;
+	height: 400px !important;
 	background-image: url('../img/city.jpg');
 	background-size: cover;
-	padding-top: 30px !important;
+	padding-top: 80px !important;
 }
 
 .portfolio-item {

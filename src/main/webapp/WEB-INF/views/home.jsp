@@ -13,7 +13,7 @@
 	type="img/ico" />
 </head>
 <body>
-	<nav class="navbar-inverse navbar-custom" role="navigation">
+	<nav class="navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
