@@ -1,5 +1,11 @@
 package com.mobil.model;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "funcionario")
 public class Funcionario extends Usuario {
 
 	private static final long serialVersionUID = 1L;
@@ -15,6 +21,7 @@ public class Funcionario extends Usuario {
 		this.tipo = tipo;
 	}
 
+	@OneToOne
 	public Endereco getEndereco() {
 		return endereco;
 	}

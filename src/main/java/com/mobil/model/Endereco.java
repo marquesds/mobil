@@ -2,6 +2,13 @@ package com.mobil.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "endereco")
 public class Endereco implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -14,7 +21,9 @@ public class Endereco implements Serializable {
 	private String cidade;
 	private String estado;
 	private String cep;
-
+	
+	@Id
+	@GeneratedValue
 	public Long getId() {
 		return id;
 	}

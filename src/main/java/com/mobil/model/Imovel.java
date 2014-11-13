@@ -2,6 +2,14 @@ package com.mobil.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "imovel")
 public class Imovel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -19,6 +27,8 @@ public class Imovel implements Serializable {
 	private int qtdeBanheiro;
 	private String observacao;
 
+	@Id
+	@GeneratedValue
 	public Long getId() {
 		return id;
 	}
@@ -27,6 +37,7 @@ public class Imovel implements Serializable {
 		this.id = id;
 	}
 
+	@OneToOne
 	public Endereco getEndereco() {
 		return endereco;
 	}
