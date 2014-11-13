@@ -39,6 +39,7 @@ Thumbs.db
 # Some files and folders to be ignored #
 ######################
 target/**/*
+.idea/**/*
 .settings/**/*
 .settings
 Servers/**/*
@@ -48,5 +49,6 @@ Servers/**/*
 org.eclipse.jdt.core.prefs
 org.eclipse.wst.*
 application.properties
+*.iml
 
 /target
