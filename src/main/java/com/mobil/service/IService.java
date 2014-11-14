@@ -8,6 +8,6 @@ public interface IService<T> {
 
 	public void remove(T entidade);
 
-	public List<T> buscaTodos();
+	public List<T> listaTodos();
 
 }

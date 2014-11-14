@@ -12,16 +12,16 @@ import com.mobil.util.jpa.EntityManagerProvider;
 public class ImovelService implements IService<Imovel> {
 
 	private EntityManager manager = EntityManagerProvider.getEntityManager();
-	private DAO<Imovel> dao = new DAO<Imovel>(manager);
+	private DAO<Imovel> dao = new DAO<Imovel>(Imovel.class);
 
 	@Override
 	public Imovel salva(Imovel imovel) {
 		try {
 			manager.getTransaction().begin();
 			if (imovel.getId() == null) {
-				dao.salva(imovel);
+				dao.adiciona(imovel);
 			} else {
-				dao.altera(imovel);
+				dao.atualiza(imovel);
 			}
 			manager.getTransaction().commit();
 		} catch (Exception ex) {
@@ -35,26 +35,15 @@ public class ImovelService implements IService<Imovel> {
 	}
 
 	@Override
-	public void remove(Imovel imovel) {
-		try {
-			manager.getTransaction().begin();
-			if (imovel.getId() != null) {
-				dao.remove(imovel);
-			} else {
-				throw new Exception();
-			}
-			manager.getTransaction().commit();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			manager.getTransaction().rollback();
-		} finally {
-			manager.close();
-		}
+	public void remove(Imovel entidade) {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
-	public List<Imovel> buscaTodos() {
+	public List<Imovel> listaTodos() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }
