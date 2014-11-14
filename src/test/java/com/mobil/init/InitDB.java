@@ -21,8 +21,8 @@ public class InitDB {
 		imovel.setPreco(500);
 
 		try {
-			clienteService.salva(cliente);
-			imovelService.salva(imovel);
+			clienteService.adiciona(cliente);
+			imovelService.adiciona(imovel);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

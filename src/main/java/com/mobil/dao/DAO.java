@@ -18,7 +18,8 @@ public class DAO<T> {
 	public void adiciona(T t) {
 
 		// consegue a entity manager
-		EntityManager em = EntityManagerProvider.getEntityManager();
+		EntityManager em = EntityManagerProvider.getInstance()
+				.getEntityManager();
 
 		// abre transacao
 		em.getTransaction().begin();
@@ -34,7 +35,8 @@ public class DAO<T> {
 	}
 
 	public void remove(T t) {
-		EntityManager em = EntityManagerProvider.getEntityManager();
+		EntityManager em = EntityManagerProvider.getInstance()
+				.getEntityManager();
 		em.getTransaction().begin();
 
 		em.remove(em.merge(t));
@@ -44,7 +46,8 @@ public class DAO<T> {
 	}
 
 	public void atualiza(T t) {
-		EntityManager em = EntityManagerProvider.getEntityManager();
+		EntityManager em = EntityManagerProvider.getInstance()
+				.getEntityManager();
 		em.getTransaction().begin();
 
 		em.merge(t);
@@ -54,7 +57,8 @@ public class DAO<T> {
 	}
 
 	public List<T> listaTodos() {
-		EntityManager em = EntityManagerProvider.getEntityManager();
+		EntityManager em = EntityManagerProvider.getInstance()
+				.getEntityManager();
 		CriteriaQuery<T> query = em.getCriteriaBuilder().createQuery(classe);
 		query.select(query.from(classe));
 
@@ -64,22 +68,25 @@ public class DAO<T> {
 		return lista;
 	}
 
-	public T buscaPorId(Integer id) {
-		EntityManager em = EntityManagerProvider.getEntityManager();
+	public T buscaPorId(Long id) {
+		EntityManager em = EntityManagerProvider.getInstance()
+				.getEntityManager();
 		T instancia = em.find(classe, id);
 		em.close();
 		return instancia;
 	}
 
 	public T buscaPorNome(String nome) {
-		EntityManager em = EntityManagerProvider.getEntityManager();
+		EntityManager em = EntityManagerProvider.getInstance()
+				.getEntityManager();
 		T instancia = em.find(classe, nome);
 		em.close();
 		return instancia;
 	}
 
 	public List<T> listaTodosPaginada(int firstResult, int maxResults) {
-		EntityManager em = EntityManagerProvider.getEntityManager();
+		EntityManager em = EntityManagerProvider.getInstance()
+				.getEntityManager();
 		CriteriaQuery<T> query = em.getCriteriaBuilder().createQuery(classe);
 		query.select(query.from(classe));
 

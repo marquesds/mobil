@@ -1,9 +1,6 @@
 package com.mobil.service.impl;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
 import com.mobil.dao.DAO;
 import com.mobil.model.Cliente;
@@ -13,15 +10,17 @@ import com.mobil.util.jpa.EntityManagerProvider;
 
 public class ClienteService implements IService<Cliente> {
 
-	private EntityManager manager = EntityManagerProvider.getEntityManager();
+	private EntityManager manager = EntityManagerProvider.getInstance()
+			.getEntityManager();
 	private DAO<Cliente> dao = new DAO<Cliente>(Cliente.class);
 
 	@Override
-	public Cliente salva(Cliente cliente) {
+	public Cliente adiciona(Cliente cliente) {
 		try {
 			manager.getTransaction().begin();
 			if (cliente.getId() == null) {
 				dao.adiciona(cliente);
+				cliente = new Cliente();
 			} else {
 				dao.atualiza(cliente);
 			}
@@ -54,19 +53,8 @@ public class ClienteService implements IService<Cliente> {
 		}
 	}
 
-	@Override
-	@SuppressWarnings("unchecked")
-	public List<Cliente> listaTodos() {
-		Query query = this.manager.createQuery("select x from cliente x");
-		return query.getResultList();
-	}
-
-	public Cliente buscaPorId(Long id) {
-		return manager.find(Cliente.class, id);
-	}
-	
 	public Cliente adicionaFavorito(Long clienteId, Imovel imovel) {
-		Cliente cliente = buscaPorId(clienteId);
+		Cliente cliente = dao.buscaPorId(clienteId);
 		cliente.getImoveisFavoritos().add(imovel);
 		try {
 			manager.getTransaction().begin();

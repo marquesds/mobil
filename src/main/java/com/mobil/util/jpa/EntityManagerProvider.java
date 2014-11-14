@@ -6,16 +6,17 @@ import javax.persistence.Persistence;
 
 public class EntityManagerProvider {
 
-	private static EntityManagerFactory emf = Persistence
+	private static final EntityManagerProvider instance = new EntityManagerProvider();
+
+	private EntityManagerFactory emf = Persistence
 			.createEntityManagerFactory("mobil");
 
-	public static EntityManager getEntityManager() {
-		return emf.createEntityManager();
+	public static synchronized EntityManagerProvider getInstance() {
+		return instance;
 	}
 
-	public static void close(EntityManager em) {
-		em.close();
-		emf.close();
+	public EntityManager getEntityManager() {
+		return emf.createEntityManager();
 	}
 
 }

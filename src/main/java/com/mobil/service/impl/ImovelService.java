@@ -1,7 +1,5 @@
 package com.mobil.service.impl;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 
 import com.mobil.dao.DAO;
@@ -11,15 +9,17 @@ import com.mobil.util.jpa.EntityManagerProvider;
 
 public class ImovelService implements IService<Imovel> {
 
-	private EntityManager manager = EntityManagerProvider.getEntityManager();
+	private EntityManager manager = EntityManagerProvider.getInstance()
+			.getEntityManager();
 	private DAO<Imovel> dao = new DAO<Imovel>(Imovel.class);
 
 	@Override
-	public Imovel salva(Imovel imovel) {
+	public Imovel adiciona(Imovel imovel) {
 		try {
 			manager.getTransaction().begin();
 			if (imovel.getId() == null) {
 				dao.adiciona(imovel);
+				imovel = new Imovel();
 			} else {
 				dao.atualiza(imovel);
 			}
@@ -36,14 +36,6 @@ public class ImovelService implements IService<Imovel> {
 
 	@Override
 	public void remove(Imovel entidade) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public List<Imovel> listaTodos() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
