@@ -25,8 +25,8 @@ public class InitDB {
 			// clienteService.adiciona(cliente);
 			// imovelService.adiciona(imovel);
 			// clienteService.remove(cliente);
-			// clienteService.adicionaFavorito(1L, imovel);
-			clienteService.removeFavorito(1L, 10L);
+			// clienteService.adicionaFavorito(clienteService.dao.buscaPorId(1L), imovelService.dao.buscaPorId(10L));
+			clienteService.removeFavorito(clienteService.dao.buscaPorId(1L), imovelService.dao.buscaPorId(10L));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

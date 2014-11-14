@@ -1,5 +1,7 @@
 package com.mobil.service.impl;
 
+import java.util.List;
+
 import com.mobil.dao.DAO;
 import com.mobil.model.Cliente;
 import com.mobil.model.Imovel;
@@ -36,9 +38,9 @@ public class ClienteService implements IService<Cliente> {
 		}
 	}
 
-	public void adicionaFavorito(Long clienteId, Imovel imovel) {
-		Cliente cliente = dao.buscaPorId(clienteId);
+	public void adicionaFavorito(Cliente cliente, Imovel imovel) {
 		cliente.getImoveisFavoritos().add(imovel);
+
 		try {
 			dao.atualiza(cliente);
 		} catch (Exception ex) {
@@ -46,18 +48,18 @@ public class ClienteService implements IService<Cliente> {
 		}
 	}
 
-	public void removeFavorito(Long clienteId, Long imovelId) {
-		Cliente cliente = dao.buscaPorId(clienteId);
-		ImovelService imovelService = new ImovelService();
-		Imovel imovel = imovelService.dao.buscaPorId(imovelId);
-		
-		System.out.println(cliente.getId());
-		System.out.println(imovel.getId());
+	public void removeFavorito(Cliente cliente, Imovel imovel) {
+
+		List<Imovel> imoveis = cliente.getImoveisFavoritos();
+
+		for (Imovel i : imoveis) {
+			if (i.getId() == imovel.getId()) {
+				imovel = i;
+			}
+		}
 
 		cliente.getImoveisFavoritos().remove(imovel);
-		
-		System.out.println(cliente.getImoveisFavoritos());
-		
+
 		try {
 			dao.atualiza(cliente);
 		} catch (Exception ex) {
