@@ -13,7 +13,8 @@
 	type="img/ico" />
 </head>
 <body>
-	<nav class="navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
+	<nav class="navbar-inverse navbar-fixed-top navbar-custom"
+		role="navigation">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -70,7 +71,7 @@
 			<h3 style="color: #fff">O lugar perfeito para encontrar seu
 				imóvel!</h3>
 			<br>
-			<button type="submit" class="btn btn-primary">Cadastre-se »</button>
+			<a href="/mobil/cliente/cadastro" class="btn btn-primary">Cadastre-se »</a>
 		</center>
 	</div>
 

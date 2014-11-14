@@ -38,7 +38,7 @@ public class ClienteService implements IService<Cliente> {
 		}
 	}
 
-	public void adicionaFavorito(Cliente cliente, Imovel imovel) {
+	public void adicionaImovelFavorito(Cliente cliente, Imovel imovel) {
 		cliente.getImoveisFavoritos().add(imovel);
 
 		try {
@@ -48,7 +48,7 @@ public class ClienteService implements IService<Cliente> {
 		}
 	}
 
-	public void removeFavorito(Cliente cliente, Imovel imovel) {
+	public void removeImovelFavorito(Cliente cliente, Imovel imovel) {
 
 		List<Imovel> imoveis = cliente.getImoveisFavoritos();
 
