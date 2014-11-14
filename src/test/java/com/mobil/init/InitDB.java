@@ -1,18 +1,24 @@
 package com.mobil.init;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import com.mobil.model.Imovel;
+import com.mobil.service.ImovelService;
 
 public class InitDB {
 
 	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("mobil");
 
-		EntityManager em = emf.createEntityManager();
+		Imovel imovel = new Imovel();
+		ImovelService imovelService = new ImovelService();
 
-		em.close();
+		imovel.setPreco(500);
+
+		try {
+			System.out.println("salvando imovel!!!!!!!!!!");
+			imovelService.salva(imovel);
+			System.out.println("imovel salvo!!!!!!!!!!");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
