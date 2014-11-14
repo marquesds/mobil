@@ -1,7 +1,7 @@
 package com.mobil.init;
 
 import com.mobil.model.Imovel;
-import com.mobil.service.ImovelService;
+import com.mobil.service.impl.ImovelService;
 
 public class InitDB {
 
