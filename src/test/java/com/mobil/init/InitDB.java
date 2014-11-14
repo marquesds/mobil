@@ -15,14 +15,17 @@ public class InitDB {
 		Imovel imovel = new Imovel();
 		ImovelService imovelService = new ImovelService();
 
+		//Cliente cliente = clienteService.dao.buscaPorId(2L);
+		
+		imovel.setPreco(2500);
 		cliente.setNome("Lucas Marques");
 		cliente.setEmail("lucasmarquesds@gmail.com");
-		
-		imovel.setPreco(500);
 
 		try {
 			clienteService.adiciona(cliente);
 			imovelService.adiciona(imovel);
+			//clienteService.remove(cliente);
+			//clienteService.adicionaFavorito(1L, imovel);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
