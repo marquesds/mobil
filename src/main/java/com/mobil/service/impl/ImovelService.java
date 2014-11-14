@@ -6,7 +6,7 @@ import com.mobil.service.IService;
 
 public class ImovelService implements IService<Imovel> {
 
-	private DAO<Imovel> dao = new DAO<Imovel>(Imovel.class);
+	public DAO<Imovel> dao = new DAO<Imovel>(Imovel.class);
 
 	@Override
 	public void adiciona(Imovel imovel) {

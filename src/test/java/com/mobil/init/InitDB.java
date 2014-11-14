@@ -11,21 +11,22 @@ public class InitDB {
 
 		Cliente cliente = new Cliente();
 		ClienteService clienteService = new ClienteService();
-		
+
 		Imovel imovel = new Imovel();
 		ImovelService imovelService = new ImovelService();
 
-		//Cliente cliente = clienteService.dao.buscaPorId(2L);
-		
+		// Cliente cliente = clienteService.dao.buscaPorId(2L);
+
 		imovel.setPreco(2500);
 		cliente.setNome("Lucas Marques");
 		cliente.setEmail("lucasmarquesds@gmail.com");
 
 		try {
-			clienteService.adiciona(cliente);
-			imovelService.adiciona(imovel);
-			//clienteService.remove(cliente);
-			//clienteService.adicionaFavorito(1L, imovel);
+			// clienteService.adiciona(cliente);
+			// imovelService.adiciona(imovel);
+			// clienteService.remove(cliente);
+			// clienteService.adicionaFavorito(1L, imovel);
+			clienteService.removeFavorito(1L, 10L);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

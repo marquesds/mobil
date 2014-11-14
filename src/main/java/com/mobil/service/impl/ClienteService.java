@@ -36,7 +36,7 @@ public class ClienteService implements IService<Cliente> {
 		}
 	}
 
-	public Cliente adicionaFavorito(Long clienteId, Imovel imovel) {
+	public void adicionaFavorito(Long clienteId, Imovel imovel) {
 		Cliente cliente = dao.buscaPorId(clienteId);
 		cliente.getImoveisFavoritos().add(imovel);
 		try {
@@ -44,8 +44,25 @@ public class ClienteService implements IService<Cliente> {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+	}
 
-		return cliente;
+	public void removeFavorito(Long clienteId, Long imovelId) {
+		Cliente cliente = dao.buscaPorId(clienteId);
+		ImovelService imovelService = new ImovelService();
+		Imovel imovel = imovelService.dao.buscaPorId(imovelId);
+		
+		System.out.println(cliente.getId());
+		System.out.println(imovel.getId());
+
+		cliente.getImoveisFavoritos().remove(imovel);
+		
+		System.out.println(cliente.getImoveisFavoritos());
+		
+		try {
+			dao.atualiza(cliente);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 }
