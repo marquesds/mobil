@@ -1,5 +1,6 @@
 package com.mobil.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -16,7 +17,25 @@ public class Cliente extends Usuario {
 
 	private static final long serialVersionUID = 1L;
 
+	private Date dataNascimento;
+	private String sexo;
 	private List<Imovel> imoveisFavoritos;
+
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
 
 	@Autowired
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
