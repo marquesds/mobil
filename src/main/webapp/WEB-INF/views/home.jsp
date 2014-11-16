@@ -71,7 +71,7 @@
 			<h3 style="color: #fff">O lugar perfeito para encontrar seu
 				imóvel!</h3>
 			<br>
-			<a href="/mobil/cliente/cadastro" class="btn btn-primary">Cadastre-se »</a>
+			<a href="/mobil/cadastro" class="btn btn-primary">Cadastre-se »</a>
 		</center>
 	</div>
 

@@ -19,6 +19,8 @@ public class Cliente extends Usuario {
 
 	private Date dataNascimento;
 	private String sexo;
+	@Autowired
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Imovel> imoveisFavoritos;
 
 	public Date getDataNascimento() {
@@ -37,8 +39,6 @@ public class Cliente extends Usuario {
 		this.sexo = sexo;
 	}
 
-	@Autowired
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	public List<Imovel> getImoveisFavoritos() {
 		return imoveisFavoritos;
 	}

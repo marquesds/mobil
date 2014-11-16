@@ -16,7 +16,7 @@
 
 <style type="text/css">
 body {
-	margin-top: 50px;
+	margin-top: 30px;
 	background-image: url('<c:url value="/resources/img/city.jpg" />')
 		!important;
 	background-size: cover !important;
@@ -39,7 +39,7 @@ body {
 					<a href="#"><i class="glyphicon glyphicon-globe"></i></a>
 					Cadastre-se!
 				</legend>
-				<form action="#" method="post" class="form" role="form">
+				<form class="form" method="POST" action="adicionaCliente">
 					<div class="row">
 						<div class="col-xs-12">
 							<input class="form-control" name="nome"
@@ -47,24 +47,33 @@ body {
 						</div>
 					</div>
 					<input class="form-control" name="email" placeholder="Email"
-						type="email" /> <input class="form-control" name="senha"
-						placeholder="Senha" type="password" /> <input
-						class="form-control" name="confirmacaoSenha"
-						placeholder="Confirme sua senha" type="password" /> <label for="">
-						Birth Date</label>
+						type="email" />
+					
 					<div class="row">
 						<div class="col-xs-6 col-md-6">
-							<input type="text" class="form-control" value=""
-								placeholder="dd/MM/yyyy" id="datepicker">
+							<input type="text" class="form-control" value="" name="dataNascimento"
+								placeholder="Data de Nascimento" id="datepicker">
 						</div>
 					</div>
-					<label class="radio-inline"> <input type="radio"
-						name="sexo" id="inlineCheckbox1" value="masculino" /> Masculino
-					</label> <label class="radio-inline"> <input type="radio"
-						name="sex" id="inlineCheckbox2" value="feminino" /> Feminino
-					</label> <br /> <br />
+					
+					<input class="form-control" name="senha" placeholder="Senha" type="password" /> 
+					<input class="form-control" name="cpf" id="cpf" placeholder="CPF" type="text" />
+					<input class="form-control" name="telResidencial" id="telResidencial" placeholder="Telefone Residencial" type="text" />
+					<input class="form-control" name="telCelular" id="telCelular" placeholder="Telefone Celular" type="text" />
+					
+					<div class="radio">
+						<label class="radio-inline"> <input type="radio"
+							name="sexo" id="masculino" value="masculino" checked>
+							Masculino
+						</label> <label class="radio-inline"> <input type="radio"
+							name="sexo" id="feminino" value="feminino">
+							Feminino
+						</label>
+					</div>
+
+					<br /> <br />
 					<button class="btn btn-lg btn-primary btn-block" type="submit">
-						Sign up</button>
+						Cadastrar!</button>
 				</form>
 			</div>
 		</div>
@@ -72,8 +81,19 @@ body {
 	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 	<script src="<c:url value="/resources/js/bootstrap-datepicker.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery.mask.min.js" />"></script>
+
 	<script type="text/javascript">
-		$('#datepicker').datepicker().on('changeDate', function(ev) {
+		$(document).ready(function() {
+			$('#datepicker').mask('00/00/0000');
+			$('#cpf').mask('000.000.000-00');
+			$('#telResidencial').mask('(00) 0000-0000');
+			$('#telCelular').mask('(00) 0 0000-0000');
+		});
+
+		$('#datepicker').datepicker({
+			format : 'dd/mm/yyyy'
+		}).on('changeDate', function(ev) {
 			$('#datepicker').datepicker('hide');
 		})
 	</script>
