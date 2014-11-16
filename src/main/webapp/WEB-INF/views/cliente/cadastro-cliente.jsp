@@ -36,7 +36,8 @@ body {
 			<div class="col-md-2"></div>
 			<div class="col-xs-12 col-sm-12 col-md-8 well well-sm">
 				<legend>
-					<a href="#"><i class="glyphicon glyphicon-globe"></i></a>
+					<a href="/mobil/"><img class="logo" title="Home"
+				alt="Logo" src="<c:url value="/resources/img/house.png" />"></a>
 					Cadastre-se!
 				</legend>
 				<form class="form" method="POST" action="adicionaCliente">
@@ -47,19 +48,19 @@ body {
 						</div>
 					</div>
 					<input class="form-control" name="email" placeholder="Email"
-						type="email" />
+						type="email" required />
 					
 					<div class="row">
 						<div class="col-xs-6 col-md-6">
 							<input type="text" class="form-control" value="" name="dataNascimento"
-								placeholder="Data de Nascimento" id="datepicker">
+								placeholder="Data de Nascimento" id="datepicker" required >
 						</div>
 					</div>
 					
-					<input class="form-control" name="senha" placeholder="Senha" type="password" /> 
-					<input class="form-control" name="cpf" id="cpf" placeholder="CPF" type="text" />
-					<input class="form-control" name="telResidencial" id="telResidencial" placeholder="Telefone Residencial" type="text" />
-					<input class="form-control" name="telCelular" id="telCelular" placeholder="Telefone Celular" type="text" />
+					<input class="form-control" name="senha" placeholder="Senha" type="password" required /> 
+					<input class="form-control" name="cpf" id="cpf" placeholder="CPF" type="text" required />
+					<input class="form-control" name="telResidencial" id="telResidencial" placeholder="Telefone Residencial" type="text" required />
+					<input class="form-control" name="telCelular" id="telCelular" placeholder="Telefone Celular" type="text" required />
 					
 					<div class="radio">
 						<label class="radio-inline"> <input type="radio"
@@ -77,6 +78,18 @@ body {
 				</form>
 			</div>
 		</div>
+		
+		<!-- Footer -->
+		<footer>
+		<center>
+			<div class="row" style="color: white;">
+			<div class="col-lg-12">
+				<p>Copyright &copy; Your Website 2014</p>
+			</div>
+			</div>
+		</center>
+		<!-- /.row --> </footer>
+		
 	</div>
 	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>

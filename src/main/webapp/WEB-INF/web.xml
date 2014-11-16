@@ -6,6 +6,14 @@
 
 	<display-name>mobil</display-name>
 	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+	</listener>
+	
 	<servlet>
       <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
       <servlet-class>
