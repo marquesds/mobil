@@ -66,5 +66,10 @@ public class ClienteService implements IService<Cliente> {
 			ex.printStackTrace();
 		}
 	}
+	
+	public Cliente buscaPorEmail(String email) {
+		Cliente cliente = dao.buscaPorNome(email);
+		return cliente;
+	}
 
 }

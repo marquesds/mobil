@@ -2,11 +2,21 @@ package com.mobil.model;
 
 import java.io.Serializable;
 
-public class TipoFuncionario implements Serializable {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "grupo")
+public class Grupo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue
 	private Long id;
+	private String nome;
 	private String descricao;
 
 	public Long getId() {
@@ -15,6 +25,14 @@ public class TipoFuncionario implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getDescricao() {
