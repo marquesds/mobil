@@ -2,10 +2,13 @@ package com.mobil.service.impl;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
+
 import com.mobil.dao.DAO;
 import com.mobil.model.Cliente;
 import com.mobil.model.Imovel;
 import com.mobil.service.IService;
+import com.mobil.util.jpa.EntityManagerProvider;
 
 public class ClienteService implements IService<Cliente> {
 
@@ -66,9 +69,22 @@ public class ClienteService implements IService<Cliente> {
 			ex.printStackTrace();
 		}
 	}
-	
+
 	public Cliente buscaPorEmail(String email) {
-		Cliente cliente = dao.buscaPorNome(email);
+		Cliente cliente = null;
+
+		try {
+			cliente = EntityManagerProvider
+					.getInstance()
+					.getEntityManager()
+					.createQuery("from Cliente where lower(email) = :email",
+							Cliente.class)
+					.setParameter("email", email.toLowerCase())
+					.getSingleResult();
+		} catch (NoResultException ex) {
+			ex.printStackTrace();
+		}
+
 		return cliente;
 	}
 
