@@ -37,7 +37,7 @@
 				<li><a href="#">Ofertas</a></li>
 				<li><a href="#">Imóveis Próximos</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Olá, ${login}! <span class="caret"></span></a>
+					data-toggle="dropdown">Olá, ${usuarioLogado.nome}! <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>

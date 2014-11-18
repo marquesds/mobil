@@ -7,6 +7,8 @@
 
 	<beans:bean id="appClienteDetailsService" class="com.mobil.security.AppClienteDetailsService" />
 
+	<beans:bean id="authenticationListener" class="com.mobil.listener.AuthenticationListener" />
+
 	<http pattern="/resources/**" security="none" />
 	<http pattern="/" security="none" />
 	<http pattern="/cadastro" security="none" />
@@ -15,6 +17,10 @@
 		<!-- <intercept-url pattern="/" access="isAuthenticated()" /> -->
 		<intercept-url pattern="/admin/**" access="hasAnyRole('ADMIN')" />
 		<!-- <intercept-url pattern="/**" access="denyAll" /> -->
+
+		<form-login login-page='/login'
+			authentication-failure-url="/login?error=true"
+			authentication-success-handler-ref="authenticationListener" />
 	</http>
 
 	<authentication-manager>
