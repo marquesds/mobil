@@ -8,12 +8,13 @@
 	<beans:bean id="appClienteDetailsService" class="com.mobil.security.AppClienteDetailsService" />
 
 	<http pattern="/resources/**" security="none" />
+	<http pattern="/" security="none" />
+	<http pattern="/cadastro" security="none" />
 
 	<http auto-config="true" use-expressions="true">
-		<intercept-url pattern="/" access="isAuthenticated()" />
-		<intercept-url pattern="/admin/**"
-			access="hasAnyRole('ADMIN')" />
-		<intercept-url pattern="/**" access="denyAll" />
+		<!-- <intercept-url pattern="/" access="isAuthenticated()" /> -->
+		<intercept-url pattern="/admin/**" access="hasAnyRole('ADMIN')" />
+		<!-- <intercept-url pattern="/**" access="denyAll" /> -->
 	</http>
 
 	<authentication-manager>

@@ -1,6 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,13 +37,13 @@
 				<li><a href="#">Ofertas</a></li>
 				<li><a href="#">Imóveis Próximos</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Olá, Usuário! <span class="caret"></span></a>
+					data-toggle="dropdown">Olá, ${login}! <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
 						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
+						<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
 					</ul></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search" id="search">
@@ -70,8 +70,8 @@
 			<h1 style="color: #fff">Bem vindo ao Mobil!</h1>
 			<h3 style="color: #fff">O lugar perfeito para encontrar seu
 				imóvel!</h3>
-			<br>
-			<a href="/mobil/cadastro" class="btn btn-primary">Cadastre-se »</a>
+			<br> <a href="/mobil/cadastro" class="btn btn-primary">Cadastre-se
+				»</a>
 		</center>
 	</div>
 
@@ -135,11 +135,13 @@
 
 		<!-- Footer -->
 		<footer>
-		<div class="row">
-			<div class="col-lg-12">
-				<p>Copyright &copy; Your Website 2014</p>
+		<center>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>Copyright &copy; Your Website 2014</p>
+				</div>
 			</div>
-		</div>
+		</center>
 		<!-- /.row --> </footer>
 
 	</div>

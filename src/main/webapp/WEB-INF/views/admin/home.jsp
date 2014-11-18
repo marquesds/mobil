@@ -42,7 +42,7 @@
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
 						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
+						<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
 					</ul></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search" id="search">
