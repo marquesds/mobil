@@ -1,6 +1,8 @@
 package com.mobil.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -10,9 +12,9 @@ public class Funcionario extends Usuario {
 
 	private static final long serialVersionUID = 1L;
 
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Endereco endereco;
 
-	@OneToOne
 	public Endereco getEndereco() {
 		return endereco;
 	}

@@ -12,7 +12,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import com.mobil.model.Cliente;
+import com.mobil.model.Funcionario;
 import com.mobil.security.ClienteSistema;
+import com.mobil.security.FuncionarioSistema;
 
 public class AuthenticationListener implements AuthenticationSuccessHandler {
 
@@ -30,8 +32,13 @@ public class AuthenticationListener implements AuthenticationSuccessHandler {
 			HttpSession session = request.getSession();
 
 			session.setAttribute("usuarioLogado", cliente);
-		} else {
-			System.out.println("Mutley, faça alguma coisa!!!");
+		} else if (usuario instanceof FuncionarioSistema) {
+			Funcionario funcionario = ((FuncionarioSistema) usuario)
+					.getFuncionario();
+
+			HttpSession session = request.getSession();
+
+			session.setAttribute("usuarioLogado", funcionario);
 		}
 
 		response.sendRedirect("/mobil/");

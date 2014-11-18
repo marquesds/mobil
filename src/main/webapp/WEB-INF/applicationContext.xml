@@ -6,6 +6,8 @@
            http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
 	<beans:bean id="appClienteDetailsService" class="com.mobil.security.AppClienteDetailsService" />
+	<beans:bean id="appFuncionarioDetailsService"
+		class="com.mobil.security.AppFuncionarioDetailsService" />
 
 	<beans:bean id="authenticationListener" class="com.mobil.listener.AuthenticationListener" />
 
@@ -18,13 +20,14 @@
 		<intercept-url pattern="/admin/**" access="hasAnyRole('ADMIN')" />
 		<!-- <intercept-url pattern="/**" access="denyAll" /> -->
 
-		<form-login login-page='/login'
-			authentication-failure-url="/login?error=true"
+		<form-login login-page='/login' authentication-failure-url="/login?error=true"
 			authentication-success-handler-ref="authenticationListener" />
 	</http>
 
 	<authentication-manager>
 		<authentication-provider user-service-ref="appClienteDetailsService">
+		</authentication-provider>
+		<authentication-provider user-service-ref="appFuncionarioDetailsService">
 		</authentication-provider>
 	</authentication-manager>
 

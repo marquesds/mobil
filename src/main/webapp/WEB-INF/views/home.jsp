@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -37,7 +38,9 @@
 				<li><a href="#">Ofertas</a></li>
 				<li><a href="#">Imóveis Próximos</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Olá, ${usuarioLogado.nome}! <span class="caret"></span></a>
+					data-toggle="dropdown"> <c:set var="nome"
+							value="${fn:split(usuarioLogado.nome, ' ')}" /> Olá, ${nome[0]}!
+						<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>

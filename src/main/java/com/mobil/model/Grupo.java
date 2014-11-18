@@ -2,6 +2,7 @@ package com.mobil.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,6 +17,7 @@ public class Grupo implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Column(name = "nome", unique = true)
 	private String nome;
 	private String descricao;
 
