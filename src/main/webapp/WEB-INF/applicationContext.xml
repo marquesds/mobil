@@ -25,9 +25,9 @@
 	</http>
 
 	<authentication-manager>
-		<authentication-provider user-service-ref="appClienteDetailsService">
-		</authentication-provider>
 		<authentication-provider user-service-ref="appFuncionarioDetailsService">
+		</authentication-provider>
+		<authentication-provider user-service-ref="appClienteDetailsService">
 		</authentication-provider>
 	</authentication-manager>
 

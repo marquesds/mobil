@@ -29,11 +29,11 @@
 							<fieldset>
 								<div class="form-group">
 									<input class="form-control" placeholder="E-mail"
-										name="j_username" type="text">
+										name="j_username" type="text" required autofocus>
 								</div>
 								<div class="form-group">
 									<input class="form-control" placeholder="Password"
-										name="j_password" type="password" value="">
+										name="j_password" type="password" value="" required>
 								</div>
 								<input class="btn btn-lg btn-success btn-block" type="submit"
 									value="Login">

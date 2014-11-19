@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class EntityManagerProvider {
 
-	private static final EntityManagerProvider instance = new EntityManagerProvider();
+	private static EntityManagerProvider instance = new EntityManagerProvider();
 
 	private EntityManagerFactory emf = Persistence
 			.createEntityManagerFactory("mobil");

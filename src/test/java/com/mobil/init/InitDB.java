@@ -17,7 +17,7 @@ public class InitDB {
 
 		funcionario.setNome("João Marcos da Silva");
 		funcionario.setEmail("jmarcos@gmail.com");
-		funcionario.setSenha("123");
+		funcionario.setSenha("1234");
 
 		Grupo grupo = new Grupo();
 
