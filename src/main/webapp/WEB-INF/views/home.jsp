@@ -37,17 +37,22 @@
 				<li><a href="#">Locação</a></li>
 				<li><a href="#">Ofertas</a></li>
 				<li><a href="#">Imóveis Próximos</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"> <c:set var="nome"
-							value="${fn:split(usuarioLogado.nome, ' ')}" /> Olá, ${nome[0]}!
-						<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
-					</ul></li>
+				<c:if test="${usuarioLogado != null}">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"> <c:set var="nome"
+								value="${fn:split(usuarioLogado.nome, ' ')}" /> Olá,
+							${nome[0]}! <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
+						</ul></li>
+				</c:if>
+				<c:if test="${usuarioLogado == null}">
+					<li><a href="/mobil/login">Login</a></li>
+				</c:if>
 			</ul>
 			<form class="navbar-form navbar-left" role="search" id="search">
 				<div class="row">

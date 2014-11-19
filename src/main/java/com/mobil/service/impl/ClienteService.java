@@ -6,6 +6,7 @@ import javax.persistence.NoResultException;
 
 import com.mobil.dao.DAO;
 import com.mobil.model.Cliente;
+import com.mobil.model.Grupo;
 import com.mobil.model.Imovel;
 import com.mobil.service.IService;
 import com.mobil.util.jpa.EntityManagerProvider;
@@ -18,6 +19,12 @@ public class ClienteService implements IService<Cliente> {
 	public void adiciona(Cliente cliente) {
 		try {
 			if (cliente.getId() == null) {
+				// Adicionando um grupo default ao cliente
+				Grupo grupo = new Grupo();
+				grupo.setNome("comum");
+				grupo.setDescricao("Grupo de Usuários Comuns do Sistema (Clientes)");
+				cliente.getGrupos().add(grupo);
+				// Salvando o cliente
 				dao.adiciona(cliente);
 				cliente = new Cliente();
 			} else {

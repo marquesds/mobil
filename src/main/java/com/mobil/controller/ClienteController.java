@@ -18,6 +18,6 @@ public class ClienteController {
 	public String cadastrarCliente(Cliente cliente) {
 		ClienteService cs = new ClienteService();
 		cs.adiciona(cliente);
-		return "redirect:cadastro";
+		return "redirect:login";
 	}
 }

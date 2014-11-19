@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,15 +36,22 @@
 				<li class="active"><a href="#">Imovel</a></li>
 				<li><a href="#">Cliente</a></li>
 				<li><a href="#">Funcionario</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Olá, Usuário! <span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
-					</ul></li>
+				<c:if test="${usuarioLogado != null}">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"> <c:set var="nome"
+								value="${fn:split(usuarioLogado.nome, ' ')}" /> Olá,
+							${nome[0]}! <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
+						</ul></li>
+				</c:if>
+				<c:if test="${usuarioLogado == null}">
+					<li><a href="/mobil/login">Login</a></li>
+				</c:if>
 			</ul>
 			<form class="navbar-form navbar-left" role="search" id="search">
 				<div class="row">
