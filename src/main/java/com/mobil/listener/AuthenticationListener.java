@@ -11,10 +11,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-import com.mobil.model.Cliente;
-import com.mobil.model.Funcionario;
-import com.mobil.security.ClienteSistema;
-import com.mobil.security.FuncionarioSistema;
+import com.mobil.model.Grupo;
+import com.mobil.model.Usuario;
+import com.mobil.security.UsuarioSistema;
+import com.mobil.service.impl.ClienteService;
+import com.mobil.service.impl.FuncionarioService;
 
 public class AuthenticationListener implements AuthenticationSuccessHandler {
 
@@ -23,22 +24,25 @@ public class AuthenticationListener implements AuthenticationSuccessHandler {
 			HttpServletResponse response, Authentication authentication)
 			throws IOException, ServletException {
 
-		Object usuario = SecurityContextHolder.getContext().getAuthentication()
+		Object user = SecurityContextHolder.getContext().getAuthentication()
 				.getPrincipal();
 
-		if (usuario instanceof ClienteSistema) {
-			Cliente cliente = ((ClienteSistema) usuario).getCliente();
+		if (user instanceof UsuarioSistema) {
+			Usuario usuario = ((UsuarioSistema) user).getUsuario();
+
+			for (Grupo grupo : usuario.getGrupos()) {
+				if (grupo.getNome().toLowerCase().equals("comum")) {
+					usuario = new ClienteService().buscaPorEmail(usuario
+							.getEmail());
+				} else {
+					usuario = new FuncionarioService().buscaPorEmail(usuario
+							.getEmail());
+				}
+			}
 
 			HttpSession session = request.getSession();
 
-			session.setAttribute("usuarioLogado", cliente);
-		} else if (usuario instanceof FuncionarioSistema) {
-			Funcionario funcionario = ((FuncionarioSistema) usuario)
-					.getFuncionario();
-
-			HttpSession session = request.getSession();
-
-			session.setAttribute("usuarioLogado", funcionario);
+			session.setAttribute("usuarioLogado", usuario);
 		}
 
 		response.sendRedirect("/mobil/");

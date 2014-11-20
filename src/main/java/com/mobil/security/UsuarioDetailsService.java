@@ -10,35 +10,37 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.mobil.model.Cliente;
 import com.mobil.model.Grupo;
-import com.mobil.service.impl.ClienteService;
+import com.mobil.model.Usuario;
+import com.mobil.service.impl.UsuarioService;
 
-public class AppClienteDetailsService implements UserDetailsService {
+public class UsuarioDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String email)
 			throws UsernameNotFoundException {
-		ClienteService clienteService = new ClienteService();
-		Cliente cliente = clienteService.buscaPorEmail(email);
 
-		ClienteSistema user = null;
+		UsuarioService usuarioService = new UsuarioService();
+		Usuario usuario = usuarioService.buscaPorEmail(email);
 
-		if (cliente != null) {
-			user = new ClienteSistema(cliente, getGrupos(cliente));
+		UsuarioSistema user = null;
+
+		if (usuario != null) {
+			user = new UsuarioSistema(usuario, getGrupos(usuario));
 		}
 
 		return user;
 	}
 
-	private Collection<? extends GrantedAuthority> getGrupos(Cliente cliente) {
+	private Collection<? extends GrantedAuthority> getGrupos(Usuario usuario) {
 		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
-		for (Grupo grupo : cliente.getGrupos()) {
+		for (Grupo grupo : usuario.getGrupos()) {
 			authorities.add(new SimpleGrantedAuthority(grupo.getNome()
 					.toUpperCase()));
 		}
 
 		return authorities;
 	}
+
 }

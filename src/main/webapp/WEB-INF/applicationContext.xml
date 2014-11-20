@@ -5,9 +5,7 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
-	<beans:bean id="appClienteDetailsService" class="com.mobil.security.AppClienteDetailsService" />
-	<beans:bean id="appFuncionarioDetailsService"
-		class="com.mobil.security.AppFuncionarioDetailsService" />
+	<beans:bean id="usuarioDetailsService" class="com.mobil.security.UsuarioDetailsService" />
 
 	<beans:bean id="authenticationListener" class="com.mobil.listener.AuthenticationListener" />
 
@@ -25,9 +23,7 @@
 	</http>
 
 	<authentication-manager>
-		<authentication-provider user-service-ref="appFuncionarioDetailsService">
-		</authentication-provider>
-		<authentication-provider user-service-ref="appClienteDetailsService">
+		<authentication-provider user-service-ref="usuarioDetailsService">
 		</authentication-provider>
 	</authentication-manager>
 
