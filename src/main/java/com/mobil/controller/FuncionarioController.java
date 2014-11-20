@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class FuncionarioController {
 
 	@RequestMapping("/admin/funcionario/cadastro")
-	public String cadastrar() {
+	public String cadastrarFuncionario() {
 		return "/admin/funcionario/cadastro-funcionario";
 	}
-	
+
+	@RequestMapping("/admin/cliente/cadastro")
+	public String cadastrarCliente() {
+		return "/admin/cliente/cadastro-cliente";
+	}
+
 }

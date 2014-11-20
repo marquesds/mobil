@@ -33,7 +33,7 @@ public class UsuarioDetailsService implements UserDetailsService {
 	}
 
 	private Collection<? extends GrantedAuthority> getGrupos(Usuario usuario) {
-		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+		List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
 
 		for (Grupo grupo : usuario.getGrupos()) {
 			authorities.add(new SimpleGrantedAuthority(grupo.getNome()

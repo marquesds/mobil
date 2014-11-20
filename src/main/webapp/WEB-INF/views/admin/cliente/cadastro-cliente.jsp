@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,10 +17,7 @@
 
 <style type="text/css">
 body {
-	margin-top: 30px;
-	background-image: url('<c:url value="/resources/img/city.jpg" />')
-		!important;
-	background-size: cover !important;
+	margin-top: 80px;
 }
 
 .form-control {
@@ -29,14 +27,71 @@ body {
 
 </head>
 <body>
+	<nav class="navbar-inverse navbar-fixed-top navbar-custom"
+		role="navigation">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/mobil/"><img class="logo"
+				alt="Logo" src="<c:url value="/resources/img/house.png" />">
+				Mobil</a>
+		</div>
+
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="#">Imovel</a></li>
+				<li><a href="#">Cliente</a></li>
+				<li><a href="#">Funcionario</a></li>
+				<c:if test="${usuarioLogado != null}">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"> <c:set var="nome"
+								value="${fn:split(usuarioLogado.nome, ' ')}" /> Olá,
+							${nome[0]}! <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
+						</ul></li>
+				</c:if>
+				<c:if test="${usuarioLogado == null}">
+					<li><a href="/mobil/login">Login</a></li>
+				</c:if>
+			</ul>
+			<form class="navbar-form navbar-left" role="search" id="search">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="form-group">
+							<div class="input-group input-search">
+								<div class="inner-addon right-addon">
+									<i class="glyphicon glyphicon-search" style="color: #B2DBFA;"></i>
+									<input type="text" class="form-control" placeholder="Pesquisa">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid --> </nav>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-xs-12 col-sm-12 col-md-8 well well-sm">
 				<legend>
 					<a href="/mobil/"><img class="logo" title="Home" alt="Logo"
-						src="<c:url value="/resources/img/house.png" />"></a>
-					Cadastre-se!
+						src="<c:url value="/resources/img/house.png" />"></a> Cadastro
+					de Cliente
 				</legend>
 				<form class="form" method="POST" action="adicionaCliente">
 					<div class="row">
@@ -83,7 +138,7 @@ body {
 		<!-- Footer -->
 		<footer>
 		<center>
-			<div class="row" style="color: white;">
+			<div class="row">
 				<div class="col-lg-12">
 					<p>Copyright &copy; Your Website 2014</p>
 				</div>

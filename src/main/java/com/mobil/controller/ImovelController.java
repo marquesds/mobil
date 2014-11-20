@@ -10,5 +10,10 @@ public class ImovelController {
 	public String cadastrar() {
 		return "/admin/imovel/cadastro-imovel";
 	}
+
+	@RequestMapping("/venda")
+	public String venda() {
+		return "venda";
+	}
 	
 }

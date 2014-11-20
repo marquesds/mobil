@@ -31,7 +31,7 @@ public abstract class Usuario implements Serializable {
 	private String senha;
 	private String cpf;
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Grupo> grupos = new ArrayList<>();
+	private List<Grupo> grupos = new ArrayList<Grupo>();
 	private String telCelular;
 	private String telResidencial;
 

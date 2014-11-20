@@ -15,7 +15,7 @@ public class UsuarioService implements IService<Usuario> {
 	public void adiciona(Usuario usuario) {
 		try {
 			if (usuario.getId() != null) {
-				dao.remove(usuario);
+				this.getDao().remove(usuario);
 			} else {
 				throw new Exception();
 			}
@@ -28,7 +28,7 @@ public class UsuarioService implements IService<Usuario> {
 	public void remove(Usuario usuario) {
 		try {
 			if (usuario.getId() != null) {
-				dao.remove(usuario);
+				this.getDao().remove(usuario);
 			} else {
 				throw new Exception();
 			}

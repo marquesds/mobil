@@ -50,5 +50,6 @@ org.eclipse.jdt.core.prefs
 org.eclipse.wst.*
 application.properties
 *.iml
+/out
 
 /target
