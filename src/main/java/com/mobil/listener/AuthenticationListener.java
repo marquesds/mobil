@@ -34,9 +34,13 @@ public class AuthenticationListener implements AuthenticationSuccessHandler {
 				if (grupo.getNome().toLowerCase().equals("comum")) {
 					usuario = new ClienteService().buscaPorEmail(usuario
 							.getEmail());
+
+					response.sendRedirect("/mobil/");
 				} else {
 					usuario = new FuncionarioService().buscaPorEmail(usuario
 							.getEmail());
+
+					response.sendRedirect("/mobil/admin/");
 				}
 			}
 
@@ -44,8 +48,6 @@ public class AuthenticationListener implements AuthenticationSuccessHandler {
 
 			session.setAttribute("usuarioLogado", usuario);
 		}
-
-		response.sendRedirect("/mobil/");
 
 	}
 

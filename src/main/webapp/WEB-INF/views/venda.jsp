@@ -35,7 +35,6 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="/mobil/venda">Venda</a></li>
         <li><a href="/mobil/locacao">Locação</a></li>
-        <li><a href="/mobil/ofertas">Ofertas</a></li>
         <li><a href="/mobil/imoveis-proximos">Imóveis Próximos</a></li>
         <c:if test="${usuarioLogado != null}">
           <li class="dropdown"><a href="#" class="dropdown-toggle"
