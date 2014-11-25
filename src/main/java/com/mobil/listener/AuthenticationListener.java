@@ -36,11 +36,13 @@ public class AuthenticationListener implements AuthenticationSuccessHandler {
 							.getEmail());
 
 					response.sendRedirect("/mobil/");
+					break;
 				} else {
 					usuario = new FuncionarioService().buscaPorEmail(usuario
 							.getEmail());
 
 					response.sendRedirect("/mobil/admin/");
+					break;
 				}
 			}
 

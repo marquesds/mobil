@@ -15,5 +15,15 @@ public class ImovelController {
 	public String venda() {
 		return "venda";
 	}
-	
+
+	@RequestMapping("/locacao")
+	public String locacao() {
+		return "locacao";
+	}
+
+	@RequestMapping("/imoveis-proximos")
+	public String imoveisProximos() {
+		return "imoveis-proximos";
+	}
+
 }
