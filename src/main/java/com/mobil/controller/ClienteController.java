@@ -9,6 +9,11 @@ import com.mobil.service.impl.ClienteService;
 @Controller
 public class ClienteController {
 
+	@RequestMapping("/admin/cliente")
+	public String adminHome() {
+		return "/admin/cliente/home";
+	}
+
 	@RequestMapping("/cadastro")
 	public String cadastro() {
 		return "/cliente/cadastro-cliente";
