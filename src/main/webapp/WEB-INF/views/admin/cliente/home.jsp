@@ -25,7 +25,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/mobil/"><img class="logo"
+			<a class="navbar-brand" href="/mobil/admin"><img class="logo"
 				alt="Logo" src="<c:url value="/resources/img/house.png" />">
 				Mobil</a>
 		</div>
@@ -81,7 +81,7 @@
 		<div class="row-fluid">
 			<div class="col-md-12">
 				<div class="btn-toolbar">
-					<button class="btn btn-primary">Novo Cliente</button>
+					<a class="btn btn-primary" href="/mobil/admin/cliente/cadastro">Novo Cliente</a>
 				</div>
 				<br />
 				<div class="well">

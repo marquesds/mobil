@@ -38,7 +38,7 @@ body {
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/mobil/"><img class="logo"
+			<a class="navbar-brand" href="/mobil/admin"><img class="logo"
 				alt="Logo" src="<c:url value="/resources/img/house.png" />">
 				Mobil</a>
 		</div>
@@ -46,9 +46,9 @@ body {
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="#">Imovel</a></li>
-				<li><a href="#">Cliente</a></li>
-				<li><a href="#">Funcionario</a></li>
+				<li><a href="/mobil/admin/imovel">Imovel</a></li>
+				<li class="active"><a href="/mobil/admin/cliente">Cliente</a></li>
+				<li><a href="/mobil/admin/funcionario">Funcionario</a></li>
 				<c:if test="${usuarioLogado != null}">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"> <c:set var="nome"
