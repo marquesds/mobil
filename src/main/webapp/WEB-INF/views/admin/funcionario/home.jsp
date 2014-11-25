@@ -71,6 +71,138 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container-fluid --> </nav>
+	
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-md-12">
+				<div class="btn-toolbar">
+					<button class="btn btn-primary">Novo Funcionário</button>
+				</div>
+				<br />
+				<div class="well">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Nome</th>
+								<th>Email</th>
+								<th>CPF</th>
+								<th>Cargo</th>
+								<th>Salário</th>
+								<th style="width: 50px;"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td><a href="#">Lucas Marques da Silva</a></td>
+								<td>lucasmarquesds@gmail.com</td>
+								<td>370.340.888-02</td>
+								<td>Vendedor</td>
+								<td>R$ 1500,00</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td><a href="#">Lucas Marques da Silva</a></td>
+								<td>lucasmarquesds@gmail.com</td>
+								<td>370.340.888-02</td>
+								<td>Vendedor</td>
+								<td>R$ 1500,00</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td><a href="#">Lucas Marques da Silva</a></td>
+								<td>lucasmarquesds@gmail.com</td>
+								<td>370.340.888-02</td>
+								<td>Vendedor</td>
+								<td>R$ 1500,00</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td><a href="#">Lucas Marques da Silva</a></td>
+								<td>lucasmarquesds@gmail.com</td>
+								<td>370.340.888-02</td>
+								<td>Vendedor</td>
+								<td>R$ 1500,00</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td><a href="#">Lucas Marques da Silva</a></td>
+								<td>lucasmarquesds@gmail.com</td>
+								<td>370.340.888-02</td>
+								<td>Vendedor</td>
+								<td>R$ 1500,00</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td><a href="#">Lucas Marques da Silva</a></td>
+								<td>lucasmarquesds@gmail.com</td>
+								<td>370.340.888-02</td>
+								<td>Vendedor</td>
+								<td>R$ 1500,00</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<center>
+					<nav>
+					<ul class="pagination">
+						<li><a href="#"><span aria-hidden="true">&laquo;</span><span
+								class="sr-only">Previous</span></a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#"><span aria-hidden="true">&raquo;</span><span
+								class="sr-only">Next</span></a></li>
+					</ul>
+					</nav>
+				</center>
+			</div>
+		</div>
+	</div>
 
 	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>

@@ -21,7 +21,13 @@ public class Endereco implements Serializable {
 	private String cidade;
 	private String estado;
 	private String cep;
-	
+
+	@Override
+	public String toString() {
+		return rua + ", nº " + numero + " - " + bairro + ", " + cidade + " - "
+				+ estado;
+	}
+
 	@Id
 	@GeneratedValue
 	public Long getId() {

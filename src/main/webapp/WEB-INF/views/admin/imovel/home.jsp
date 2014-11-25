@@ -72,6 +72,145 @@
 	</div>
 	<!-- /.container-fluid --> </nav>
 
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-md-12">
+				<div class="btn-toolbar">
+					<button class="btn btn-primary">Novo Imóvel</button>
+				</div>
+				<br />
+				<div class="well">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Endereço</th>
+								<th>Complemento</th>
+								<th>CEP</th>
+								<th>Tipo</th>
+								<th>Preço</th>
+								<th class="center">Disponível?</th>
+								<th style="width: 50px;"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td><a href="#">Rua Doutor João Sabino, 1249 - Vila Boa Vista I, São Carlos - SP</a></td>
+								<td>Não</td>
+								<td>13575-050</td>
+								<td>Aluguel</td>
+								<td>R$ 1200,00</td>
+								<td class="center">Sim</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td><a href="#">Rua Doutor João Sabino, 1249 - Vila Boa Vista I, São Carlos - SP</a></td>
+								<td>Não</td>
+								<td>13575-050</td>
+								<td>Aluguel</td>
+								<td>R$ 1200,00</td>
+								<td class="center">Sim</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td><a href="#">Rua Doutor João Sabino, 1249 - Vila Boa Vista I, São Carlos - SP</a></td>
+								<td>Não</td>
+								<td>13575-050</td>
+								<td>Aluguel</td>
+								<td>R$ 1200,00</td>
+								<td class="center">Sim</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td><a href="#">Rua Doutor João Sabino, 1249 - Vila Boa Vista I, São Carlos - SP</a></td>
+								<td>Não</td>
+								<td>13575-050</td>
+								<td>Aluguel</td>
+								<td>R$ 1200,00</td>
+								<td class="center">Sim</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td><a href="#">Rua Doutor João Sabino, 1249 - Vila Boa Vista I, São Carlos - SP</a></td>
+								<td>Não</td>
+								<td>13575-050</td>
+								<td>Aluguel</td>
+								<td>R$ 1200,00</td>
+								<td class="center">Sim</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td><a href="#">Rua Doutor João Sabino, 1249 - Vila Boa Vista I, São Carlos - SP</a></td>
+								<td>Não</td>
+								<td>13575-050</td>
+								<td>Aluguel</td>
+								<td>R$ 1200,00</td>
+								<td class="center">Sim</td>
+								<td>
+									<div style="margin-top: 3px;">
+										<a href="#" title="Editar" class="pull-left"><i class="glyphicon glyphicon-pencil"></i></a>
+										<a href="#" title="Remover" class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<center>
+					<nav>
+					<ul class="pagination">
+						<li><a href="#"><span aria-hidden="true">&laquo;</span><span
+								class="sr-only">Previous</span></a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#"><span aria-hidden="true">&raquo;</span><span
+								class="sr-only">Next</span></a></li>
+					</ul>
+					</nav>
+				</center>
+			</div>
+		</div>
+	</div>
+
 	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </body>

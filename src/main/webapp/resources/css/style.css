@@ -8,6 +8,10 @@ body {
 	margin-top: -5px;
 }
 
+.center {
+	text-align: center !important;
+}
+
 .jumbotron {
 	height: 400px !important;
 	background-image: url('../img/city.jpg');
