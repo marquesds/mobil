@@ -31,7 +31,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/mobil/"><img class="logo"
+			<a class="navbar-brand" href="/mobil/admin"><img class="logo"
 				alt="Logo" src="<c:url value="/resources/img/house.png" />">
 				Mobil</a>
 		</div>
@@ -39,7 +39,7 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/mobil/admin/imovel">Imovel</a></li>
+				<li><a href="/mobil/admin/imovel">Imóvel</a></li>
 				<li><a href="/mobil/admin/cliente">Cliente</a></li>
 				<li><a href="/mobil/admin/funcionario">Funcionario</a></li>
 				<c:if test="${usuarioLogado != null}">
@@ -48,9 +48,9 @@
 								value="${fn:split(usuarioLogado.nome, ' ')}" /> Olá,
 							${nome[0]}! <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
+							<li><a href="/mobil/admin">Administração</a></li>
+							<li><a href="/mobil/">Área do Cliente</a></li>
+							<li><a href="#">Editar Perfil</a></li>
 							<li class="divider"></li>
 							<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
 						</ul></li>

@@ -35,16 +35,24 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/mobil/venda">Venda</a></li>
 				<li><a href="/mobil/locacao">Locação</a></li>
-				<li><a href="/mobil/imoveis-proximos">Imóveis Próximos</a></li>
+				<li class="active"><a href="/mobil/imoveis-proximos">Imóveis Próximos</a></li>
 				<c:if test="${usuarioLogado != null}">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"> <c:set var="nome"
 								value="${fn:split(usuarioLogado.nome, ' ')}" /> Olá,
 							${nome[0]}! <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
+							<c:forEach items="${usuarioLogado.grupos}" var="grupo">
+                       			<c:if test="${grupo.nome == 'comum'}">
+                       				<li><a href="/mobil/">Home</a></li>
+                            		<li><a href="#">Imóveis Favoritos</a></li>
+                       			</c:if>
+                            	<c:if test="${grupo.nome != 'comum'}">
+                            		<li><a href="/mobil/admin">Administração</a></li>
+                            		<li><a href="/mobil/">Área do Cliente</a></li>
+                            	</c:if>
+                            </c:forEach>
+							<li><a href="#">Editar Perfil</a></li>
 							<li class="divider"></li>
 							<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
 						</ul></li>
@@ -77,11 +85,13 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="col-md-12 col-lg-12">
-				<iframe frameborder="0" scrolling="no" width="100%"
-					marginheight="0" marginwidth="0"
+				<iframe frameborder="0" scrolling="no" width="100%" marginheight="0"
+					marginwidth="0"
 					src="https://maps.google.ch/maps?f=q&amp;source=s_q&amp;hl=de&amp;geocode=&amp;q=Bern&amp;aq=&amp;sll=46.813187,8.22421&amp;sspn=3.379772,8.453979&amp;ie=UTF8&amp;hq=&amp;hnear=Bern&amp;t=m&amp;z=12&amp;ll=46.947922,7.444608&amp;output=embed&amp;iwloc=near"></iframe>
 			</div>
 		</div>
 	</div>
+	<script src="<c:url value="/resources/js/jquery.min.js" />"></script>
+	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </body>
 </html>

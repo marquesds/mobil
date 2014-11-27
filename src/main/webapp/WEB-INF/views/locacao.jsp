@@ -33,8 +33,8 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="/mobil/venda">Venda</a></li>
-				<li><a href="/mobil/locacao">Locação</a></li>
+				<li><a href="/mobil/venda">Venda</a></li>
+				<li class="active"><a href="/mobil/locacao">Locação</a></li>
 				<li><a href="/mobil/imoveis-proximos">Imóveis Próximos</a></li>
 				<c:if test="${usuarioLogado != null}">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -42,9 +42,17 @@
 								value="${fn:split(usuarioLogado.nome, ' ')}" /> Olá, ${nome[0]}!
 							<span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
+							<c:forEach items="${usuarioLogado.grupos}" var="grupo">
+                       			<c:if test="${grupo.nome == 'comum'}">
+                       				<li><a href="/mobil/">Home</a></li>
+                            		<li><a href="#">Imóveis Favoritos</a></li>
+                       			</c:if>
+                            	<c:if test="${grupo.nome != 'comum'}">
+                            		<li><a href="/mobil/admin">Administração</a></li>
+                            		<li><a href="/mobil/">Área do Cliente</a></li>
+                            	</c:if>
+                            </c:forEach>
+                            <li><a href="#">Editar Perfil</a></li>
 							<li class="divider"></li>
 							<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
 						</ul></li>
