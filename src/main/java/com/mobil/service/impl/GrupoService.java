@@ -6,7 +6,7 @@ import com.mobil.service.IService;
 
 public class GrupoService implements IService<Grupo> {
 
-	public DAO<Grupo> dao = new DAO<Grupo>(Grupo.class);
+	private DAO<Grupo> dao = new DAO<Grupo>(Grupo.class);
 
 	@Override
 	public void adiciona(Grupo grupo) {
@@ -26,6 +26,14 @@ public class GrupoService implements IService<Grupo> {
 	public void remove(Grupo entidade) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public DAO<Grupo> getDao() {
+		return dao;
+	}
+
+	public void setDao(DAO<Grupo> dao) {
+		this.dao = dao;
 	}
 
 }

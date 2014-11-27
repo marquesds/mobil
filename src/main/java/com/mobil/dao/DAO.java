@@ -79,9 +79,16 @@ public class DAO<T> {
 	public T buscaPorNome(String nome) {
 		EntityManager em = EntityManagerProvider.getInstance()
 				.getEntityManager();
-		T instancia = em.find(classe, nome);
+
+		T instancia = (T) em
+				.createQuery(
+						"from " + classe.getName()
+								+ " where lower(nome) = :nome", classe)
+				.setParameter("nome", nome.toLowerCase()).getSingleResult();
+
 		em.close();
 		return instancia;
+
 	}
 
 	public List<T> listaTodosPaginada(int firstResult, int maxResults) {

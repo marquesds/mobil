@@ -46,8 +46,8 @@ body {
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/mobil/admin/imovel">Imóvel</a></li>
-				<li class="active"><a href="/mobil/admin/cliente">Cliente</a></li>
+				<li class="active"><a href="/mobil/admin/imovel">Imóvel</a></li>
+				<li><a href="/mobil/admin/cliente">Cliente</a></li>
 				<li><a href="/mobil/admin/funcionario">Funcionario</a></li>
 				<c:if test="${usuarioLogado != null}">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -137,13 +137,58 @@ body {
 								placeholder="Preço" type="number" required />
 						</div>
 					</div>
-					<select class="form-control" name="tipoImovel">
-						<c:forEach var="tipo" items="${tipoImovel}">
-							<option value="${tipo}" >${tipo}</option>
-						</c:forEach>
-					</select> 
-					
-					<br /> <br />
+					<div class="row">
+						<div class="col-xs-4 col-md-4">
+							<select class="form-control" name="tipo">
+								<c:forEach var="tipo" items="${tipoImovel}">
+									<option value="${tipo}">${tipo}</option>
+								</c:forEach>
+							</select>
+						</div>
+						<div class="col-xs-4 col-md-4">
+							<select class="form-control" name="categoria">
+								<c:forEach var="categoria" items="${categoriaImovel}">
+									<option value="${categoria}">${categoria}</option>
+								</c:forEach>
+							</select>
+						</div>
+						<div class="col-xs-4 col-md-4">
+							<label class="checkbox-inline" style="margin-top: 7px;"><input
+								type="checkbox" name="disponivel">Disponível?</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-6 col-md-6">
+							<input class="form-control" name="areaUtil"
+								placeholder="Área Útil m²" type="number" required />
+						</div>
+						<div class="col-xs-6 col-md-6">
+							<input class="form-control" name="areaTotal"
+								placeholder="Área Total m²" type="number" required />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-4 col-md-4">
+							<input class="form-control" name="qtdeDormitorio"
+								placeholder="Quantidade de Dormitórios" type="number" required />
+						</div>
+						<div class="col-xs-4 col-md-4">
+							<input class="form-control" name="qtdeSala"
+								placeholder="Quantidade de Salas" type="number" required />
+						</div>
+						<div class="col-xs-4 col-md-4">
+							<input class="form-control" name="qtdeBanheiro"
+								placeholder="Quantidade de Banheiros" type="number" required />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="comment">Observação:</label>
+						<textarea class="form-control" rows="2" name="observacao" id="observacao"></textarea>
+					</div>
+
 					<button class="btn btn-lg btn-primary btn-block" type="submit">
 						Cadastrar!</button>
 				</form>

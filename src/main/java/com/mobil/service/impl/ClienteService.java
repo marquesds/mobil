@@ -20,9 +20,13 @@ public class ClienteService implements IService<Cliente> {
 		try {
 			if (cliente.getId() == null) {
 				// Adicionando um grupo default ao cliente
-				Grupo grupo = new Grupo();
-				grupo.setNome("comum");
-				grupo.setDescricao("Grupo de Usuários Comuns do Sistema (Clientes)");
+				Grupo grupo = new GrupoService().getDao().buscaPorNome("comum");
+				if (grupo == null) {
+					System.out.println("*********************TESTANDO************************");
+					grupo = new Grupo();
+					grupo.setNome("comum");
+					grupo.setDescricao("Grupo de Usuários Comuns do Sistema (Clientes)");
+				}
 				cliente.getGrupos().add(grupo);
 				// Salvando o cliente
 				dao.adiciona(cliente);

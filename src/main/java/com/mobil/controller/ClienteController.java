@@ -25,4 +25,11 @@ public class ClienteController {
 		cs.adiciona(cliente);
 		return "redirect:login";
 	}
+
+	@RequestMapping("/admin/cliente/adicionaCliente")
+	public String adminCadastrarCliente(Cliente cliente) {
+		ClienteService cs = new ClienteService();
+		cs.adiciona(cliente);
+		return this.adminHome();
+	}
 }
