@@ -15,8 +15,8 @@ public class InitDB {
 		Funcionario funcionario = new Funcionario();
 		FuncionarioService funcionarioService = new FuncionarioService();
 
-		funcionario.setNome("João Marcos da Silva");
-		funcionario.setEmail("jmarcos@gmail.com");
+		funcionario.setNome("Lucas Marques");
+		funcionario.setEmail("lucasmarquesds@gmail.com");
 		funcionario.setSenha("1234");
 
 		Grupo grupo = new Grupo();

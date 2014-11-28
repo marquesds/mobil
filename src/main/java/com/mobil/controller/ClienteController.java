@@ -30,6 +30,6 @@ public class ClienteController {
 	public String adminCadastrarCliente(Cliente cliente) {
 		ClienteService cs = new ClienteService();
 		cs.adiciona(cliente);
-		return this.adminHome();
+		return "redirect:/admin/cliente";
 	}
 }

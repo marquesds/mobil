@@ -3,6 +3,7 @@ package com.mobil.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaQuery;
 
 import com.mobil.util.jpa.EntityManagerProvider;
@@ -80,11 +81,17 @@ public class DAO<T> {
 		EntityManager em = EntityManagerProvider.getInstance()
 				.getEntityManager();
 
-		T instancia = (T) em
-				.createQuery(
-						"from " + classe.getName()
-								+ " where lower(nome) = :nome", classe)
-				.setParameter("nome", nome.toLowerCase()).getSingleResult();
+		T instancia = null;
+
+		try {
+			instancia = (T) em
+					.createQuery(
+							"from " + classe.getSimpleName()
+									+ " where lower(nome) = :nome", classe)
+					.setParameter("nome", nome.toLowerCase()).getSingleResult();
+		} catch (NoResultException ex) {
+			ex.printStackTrace();
+		}
 
 		em.close();
 		return instancia;

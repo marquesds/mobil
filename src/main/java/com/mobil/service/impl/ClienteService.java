@@ -22,7 +22,6 @@ public class ClienteService implements IService<Cliente> {
 				// Adicionando um grupo default ao cliente
 				Grupo grupo = new GrupoService().getDao().buscaPorNome("comum");
 				if (grupo == null) {
-					System.out.println("*********************TESTANDO************************");
 					grupo = new Grupo();
 					grupo.setNome("comum");
 					grupo.setDescricao("Grupo de Usuários Comuns do Sistema (Clientes)");

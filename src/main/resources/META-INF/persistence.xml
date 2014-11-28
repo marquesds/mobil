@@ -13,6 +13,7 @@
 		<class>com.mobil.model.Cliente</class>
 		<class>com.mobil.model.Funcionario</class>
 		<class>com.mobil.model.Endereco</class>
+		<class>com.mobil.model.Grupo</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
