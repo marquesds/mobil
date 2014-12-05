@@ -5,7 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import com.mobil.model.Cliente;
+import com.mobil.model.Grupo;
 import com.mobil.util.jpa.EntityManagerProvider;
 
 public class DAO<T> {
@@ -16,23 +22,49 @@ public class DAO<T> {
 		this.classe = classe;
 	}
 
+	private HttpSession getSession() {
+		ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder
+				.currentRequestAttributes();
+		return attr.getRequest().getSession(true);
+	}
+
 	public void adiciona(T t) {
 
 		// consegue a entity manager
+		EntityManager em = (EntityManager) this.getSession().getAttribute(
+				"entityManager");
+
+		// persiste o objeto
+		em.persist(t);
+
+	}
+
+	public void testeAdd(Long idGrupo) {
 		EntityManager em = EntityManagerProvider.getInstance()
 				.getEntityManager();
 
 		// abre transacao
 		em.getTransaction().begin();
+		System.out.println("Transação aberta");
+		Cliente cliente = new Cliente();
+		Grupo grp = em.find(Grupo.class, idGrupo);
 
-		// persiste o objeto
-		em.persist(t);
+		if (grp == null) {
+			grp = new Grupo();
+			grp.setNome("comum");
+			grp.setDescricao("Grupo de Usuários Comuns do Sistema (Clientes)");
+		}
+
+		cliente.getGrupos().add(grp);
+		em.persist(cliente);
 
 		// commita a transacao
 		em.getTransaction().commit();
+		System.out.println("Commit realizado");
 
 		// fecha a entity manager
 		em.close();
+		System.out.println("Transação fechada");
 	}
 
 	public void remove(T t) {
