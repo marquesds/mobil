@@ -10,8 +10,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.mobil.model.Cliente;
-import com.mobil.model.Grupo;
 import com.mobil.util.jpa.EntityManagerProvider;
 
 public class DAO<T> {
@@ -37,34 +35,6 @@ public class DAO<T> {
 		// persiste o objeto
 		em.persist(t);
 
-	}
-
-	public void testeAdd(Long idGrupo) {
-		EntityManager em = EntityManagerProvider.getInstance()
-				.getEntityManager();
-
-		// abre transacao
-		em.getTransaction().begin();
-		System.out.println("Transação aberta");
-		Cliente cliente = new Cliente();
-		Grupo grp = em.find(Grupo.class, idGrupo);
-
-		if (grp == null) {
-			grp = new Grupo();
-			grp.setNome("comum");
-			grp.setDescricao("Grupo de Usuários Comuns do Sistema (Clientes)");
-		}
-
-		cliente.getGrupos().add(grp);
-		em.persist(cliente);
-
-		// commita a transacao
-		em.getTransaction().commit();
-		System.out.println("Commit realizado");
-
-		// fecha a entity manager
-		em.close();
-		System.out.println("Transação fechada");
 	}
 
 	public void remove(T t) {

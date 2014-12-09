@@ -1,6 +1,7 @@
 package com.mobil.model;
 
 import java.io.Serializable;
+import java.util.Observable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "imovel")
-public class Imovel implements Serializable {
+public class Imovel extends Observable implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -26,6 +27,11 @@ public class Imovel implements Serializable {
 	private int qtdeSala;
 	private int qtdeBanheiro;
 	private String observacao;
+
+	public void atualizaImovel() {
+		this.setChanged();
+		this.notifyAll();
+	}
 
 	@Id
 	@GeneratedValue

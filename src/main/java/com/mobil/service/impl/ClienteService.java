@@ -54,6 +54,7 @@ public class ClienteService implements IService<Cliente> {
 
 	public void adicionaImovelFavorito(Cliente cliente, Imovel imovel) {
 		cliente.getImoveisFavoritos().add(imovel);
+		imovel.addObserver(cliente);
 
 		try {
 			dao.atualiza(cliente);
@@ -73,6 +74,7 @@ public class ClienteService implements IService<Cliente> {
 		}
 
 		cliente.getImoveisFavoritos().remove(imovel);
+		imovel.deleteObserver(cliente);
 
 		try {
 			dao.atualiza(cliente);
