@@ -50,6 +50,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+		this.atualizaImovel();
 	}
 
 	public TipoImovel getTipo() {
@@ -58,6 +59,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setTipo(TipoImovel tipo) {
 		this.tipo = tipo;
+		this.atualizaImovel();
 	}
 
 	public CategoriaImovel getCategoria() {
@@ -66,6 +68,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setCategoria(CategoriaImovel categoria) {
 		this.categoria = categoria;
+		this.atualizaImovel();
 	}
 
 	public double getPreco() {
@@ -74,6 +77,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setPreco(double preco) {
 		this.preco = preco;
+		this.atualizaImovel();
 	}
 
 	public boolean isDisponivel() {
@@ -82,6 +86,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setDisponivel(boolean disponivel) {
 		this.disponivel = disponivel;
+		this.atualizaImovel();
 	}
 
 	public double getAreaUtil() {
@@ -90,6 +95,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setAreaUtil(double areaUtil) {
 		this.areaUtil = areaUtil;
+		this.atualizaImovel();
 	}
 
 	public double getAreaTotal() {
@@ -98,6 +104,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setAreaTotal(double areaTotal) {
 		this.areaTotal = areaTotal;
+		this.atualizaImovel();
 	}
 
 	public int getQtdeDormitorio() {
@@ -106,6 +113,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setQtdeDormitorio(int qtdeDormitorio) {
 		this.qtdeDormitorio = qtdeDormitorio;
+		this.atualizaImovel();
 	}
 
 	public int getQtdeSala() {
@@ -114,6 +122,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setQtdeSala(int qtdeSala) {
 		this.qtdeSala = qtdeSala;
+		this.atualizaImovel();
 	}
 
 	public int getQtdeBanheiro() {
@@ -122,6 +131,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setQtdeBanheiro(int qtdeBanheiro) {
 		this.qtdeBanheiro = qtdeBanheiro;
+		this.atualizaImovel();
 	}
 
 	public String getObservacao() {
@@ -130,6 +140,7 @@ public class Imovel extends Observable implements Serializable {
 
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
+		this.atualizaImovel();
 	}
 
 }
