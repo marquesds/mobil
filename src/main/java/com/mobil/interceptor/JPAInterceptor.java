@@ -15,10 +15,6 @@ public class JPAInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object obj) throws Exception {
 
-		System.out.println();
-		System.out.println("Parece que deu certo...");
-		System.out.println();
-
 		EntityManager manager = EntityManagerProvider.getInstance()
 				.getEntityManager();
 
