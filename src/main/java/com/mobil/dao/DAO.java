@@ -5,10 +5,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.mobil.util.jpa.EntityManagerProvider;
 
@@ -20,20 +16,20 @@ public class DAO<T> {
 		this.classe = classe;
 	}
 
-	private HttpSession getSession() {
-		ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder
-				.currentRequestAttributes();
-		return attr.getRequest().getSession(true);
-	}
-
 	public void adiciona(T t) {
 
 		// consegue a entity manager
-		EntityManager em = (EntityManager) this.getSession().getAttribute(
-				"entityManager");
+		EntityManager em = EntityManagerProvider.getInstance()
+				.getEntityManager();
+
+		em.getTransaction().begin();
 
 		// persiste o objeto
 		em.persist(t);
+
+		em.getTransaction().commit();
+
+		em.close();
 
 	}
 
